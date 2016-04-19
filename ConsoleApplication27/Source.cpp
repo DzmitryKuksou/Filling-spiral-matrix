@@ -26,11 +26,15 @@ int** EnterPoSpiraliMatrix(int** matrix, int n)
 {
 	int k, l;
 	k = l = n / 2;
-	if (k = l = 1)cin >> matrix[0][0];
+	if (!k)
+	{
+		cin >> matrix[0][0];
+		return matrix;
+	}
 	for (int h = 0, i = 0, j = 0; h < n / 2; h++)
 	{
 		if (k == l)
-		{	
+		{
 			int s = k, g = l;
 			if (!h)
 			{
@@ -39,16 +43,16 @@ int** EnterPoSpiraliMatrix(int** matrix, int n)
 			i++; j++;
 			for (;;)
 			{
-				
-				
+
+
 				if (k == l)
 				{
 					l++; cin >> matrix[k][l];
 					for (;;)
 					{
-                        k--;
+						k--;
 						if (k < n / 2 - i)break;
-						
+
 						cin >> matrix[k][l];
 					}
 					k++;
@@ -98,7 +102,7 @@ void DisplayMatrix(int** matrix, int n)
 		{
 			cout.width(4);
 			cout << matrix[i][j];
-			
+
 		}
 		cout << endl;
 	}
